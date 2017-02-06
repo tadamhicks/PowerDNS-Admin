@@ -1,10 +1,11 @@
 import os
+import socket
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # BASIC APP CONFIG
 WTF_CSRF_ENABLED = True
 SECRET_KEY = 'We are the world'
-BIND_ADDRESS = '127.0.0.1'
+BIND_ADDRESS = socket.gethostbyname(socket.gethostname())
 PORT = 9393
 LOGIN_TITLE = "PDNS"
 

@@ -9,15 +9,12 @@ ENV INSTALL_PATH /app
 
 RUN mkdir -p $INSTALL_PATH
 
-# We copy just the requirements.txt first to leverage Docker cache
-COPY ./requirements.txt /app/requirements.txt
-
 WORKDIR $INSTALL_PATH
 
 COPY . .
 
 RUN pip install -r requirements.txt
 
-EXPOSE 9393
+EXPOSE 80
 
 CMD [ "python", "./run.py" ]
